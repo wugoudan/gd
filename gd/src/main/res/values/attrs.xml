@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="titleText" format="string" />
+    <attr name="titleTextColor" format="color" />
+    <attr name="titleTextSize" format="dimension" />
+
+
+    <declare-styleable name="SRecyclerView">
+        <attr name="isAutoRefresh" format="boolean"/>
+        <attr name="isPullRefresh" format="boolean"/>
+        <attr name="isLoadMoreRefresh" format="boolean"/>
+        <attr name="refreshHeaderLayout" format="boolean"/>
+        <attr name="loadMoreFooterLayout" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="IRecyclerView">
+        <attr name="refreshHeaderLayouted" format="reference" />
+        <attr name="loadMoreFooterLayouted" format="reference" />
+        <attr name="refreshEnableded" format="boolean" />
+        <attr name="loadMoreEnableded" format="boolean" />
+        <attr name="refreshFinalMoveOffseted" format="dimension" />
+    </declare-styleable>
+</resources>

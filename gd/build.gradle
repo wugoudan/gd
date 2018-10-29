@@ -4,15 +4,16 @@ apply plugin: 'com.github.dcendents.android-maven'
 group='com.github.wugoudan'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
 
 
 
     defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion rootProject.ext.android["minSdkVersion"]
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
+        versionCode rootProject.ext.android["versionCode"]
+        versionName rootProject.ext.android["versionName"]
+        multiDexEnabled true
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -22,16 +23,42 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField("boolean", "ENABLE_LOG", "true") //控制输入日志log打印
+        }
+        debug {
+            buildConfigField("boolean", "ENABLE_LOG", "true")//控制输入日志log打印
+
         }
     }
 
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    api fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation 'com.android.support:appcompat-v7:28.0.0'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    api rootProject.ext.dependencies["junit"]
+    api rootProject.ext.dependencies["runner"]
+    api rootProject.ext.dependencies["espresso-core"]
+
+    api rootProject.ext.dependencies["constraint-layout"]
+    api rootProject.ext.dependencies["design"]
+    api rootProject.ext.dependencies["cardview-v7"]
+    api rootProject.ext.dependencies["appcompat-v7"]
+    api rootProject.ext.dependencies["multidex"]//分包
+
+    api rootProject.ext.dependencies["rxpermissions"]
+
+    api rootProject.ext.dependencies["retrofit"]
+    api rootProject.ext.dependencies["retrofit-converter-gson"]
+    api rootProject.ext.dependencies["retrofit-adapter-rxjava"]
+    api rootProject.ext.dependencies["okhttp3-logging"]
+    api rootProject.ext.dependencies["rxandroid"]
+    api rootProject.ext.dependencies["eventbus"]
+
+    api rootProject.ext.dependencies["glide"]
+
+    api rootProject.ext.dependencies["fresco"]
+    api rootProject.ext.dependencies["recyclerview-v7"]
+
+    api rootProject.ext.dependencies["statusbarutil"]
 }
