@@ -5,9 +5,6 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.support.multidex.MultiDex;
 
-import com.facebook.drawee.backends.pipeline.Fresco;
-import com.facebook.imagepipeline.core.ImagePipelineConfig;
-
 /**
  * Auther:goudan
  * Date: 2016/1/26
@@ -56,7 +53,7 @@ public class BaseApplication extends Application {
     }
 
     private void setFresco() {
-        ImagePipelineConfig config = ImagePipelineConfig.newBuilder(this).setDownsampleEnabled(true).build();
-        Fresco.initialize(getApplicationContext(), config);
+//        ImagePipelineConfig config = ImagePipelineConfig.newBuilder(this).setDownsampleEnabled(true).build();
+//        Fresco.initialize(getApplicationContext(), config);
     }
 }

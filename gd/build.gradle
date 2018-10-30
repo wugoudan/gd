@@ -57,7 +57,6 @@ dependencies {
 
     api rootProject.ext.dependencies["glide"]
 
-    api rootProject.ext.dependencies["fresco"]
     api rootProject.ext.dependencies["recyclerview-v7"]
 
     api rootProject.ext.dependencies["statusbarutil"]
