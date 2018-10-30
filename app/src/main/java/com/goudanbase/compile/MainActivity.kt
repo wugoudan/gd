@@ -1,12 +1,23 @@
 package com.goudanbase.compile
 
-import android.support.v7.app.AppCompatActivity
-import android.os.Bundle
+import android.view.View
+import com.goudanbase.lib.base.BaseActivity
+import com.goudanbase.lib.base.BaseModel
+import com.goudanbase.lib.base.BasePresenter
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity<BasePresenter<*,*>,BaseModel>() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+    override fun getLayoutId(): Int = R.layout.activity_main
+
+    override fun initView() {
+    }
+
+    override fun initEvents() {
+    }
+
+    override fun onClickEvent(v: View?) {
+    }
+
+    override fun initObject() {
     }
 }

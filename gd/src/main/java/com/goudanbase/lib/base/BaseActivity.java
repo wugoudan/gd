@@ -47,10 +47,8 @@ public abstract class BaseActivity<P extends BasePresenter, M extends BaseModel>
         this.mContext = this;
 
         initView();
-        initObject();
         initEvents();
-
-//        StatusBarUtil.setTransparent(this);
+        initObject();
     }
 
     /**
@@ -71,7 +69,6 @@ public abstract class BaseActivity<P extends BasePresenter, M extends BaseModel>
      */
     public abstract int getLayoutId();
 
-
     /**
      * 初始化View
      */
@@ -87,10 +84,16 @@ public abstract class BaseActivity<P extends BasePresenter, M extends BaseModel>
      */
     public abstract void onClickEvent(View v);
 
+    /**
+     * 初始化事物
+     */
+    public abstract void initObject();
+
     @Override
     public void onClick(View v) {
         onClickEvent(v);
     }
+
     /*********************跳转相关**********************************/
     /**
      * 通过Class跳转界面
@@ -105,12 +108,6 @@ public abstract class BaseActivity<P extends BasePresenter, M extends BaseModel>
     public void startActivityForResult(Class<?> cls, int requestCode) {
         startActivityForResult(cls, null, requestCode);
     }
-
-    /**
-     * 初始化事物
-     */
-
-    public abstract void initObject();
 
     /**
      * 含有Bundle通过Class跳转界面

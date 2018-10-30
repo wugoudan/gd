@@ -39,6 +39,7 @@ dependencies {
     api rootProject.ext.dependencies["junit"]
     api rootProject.ext.dependencies["runner"]
     api rootProject.ext.dependencies["espresso-core"]
+    api rootProject.ext.dependencies["multidex"]
 
     api rootProject.ext.dependencies["constraint-layout"]
     api rootProject.ext.dependencies["design"]
