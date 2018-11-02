@@ -1,5 +1,6 @@
 package com.goudanbase.compile
 
+import android.app.Application
 import com.goudanbase.lib.BaseApplication
 
 /**
@@ -9,6 +10,9 @@ import com.goudanbase.lib.BaseApplication
  *Mail:wulog@outlook.com
  *Effect:
  */
-class TestApp: BaseApplication() {
-
+class TestApp:Application(){
+    override fun onCreate() {
+        super.onCreate()
+        BaseApplication.init(this)
+    }
 }
